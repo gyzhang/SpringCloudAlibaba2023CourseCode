@@ -1,0 +1,21 @@
+server:
+    port: 8080
+spring:
+    application:
+        name: hello-sca2023
+    cloud:
+        nacos:
+            config:
+                server-addr: localhost:8848
+                contextPath: /nacos
+                username: nacos
+                password: nacos
+            discovery:
+                server-addr: localhost:8848
+                namespace: public
+                username: nacos
+                password: nacos
+    config:
+        import: nacos:nacos-config-example.properties?refresh=true
+    main:
+        allow-circular-references: true
